@@ -32,5 +32,7 @@ namespace MagicVilla_Web.Controllers
             }
             return View(list);
         }
+
+
     }
 }
