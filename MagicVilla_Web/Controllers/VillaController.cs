@@ -41,6 +41,7 @@ namespace MagicVilla_Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> CreateVilla(VillaCreateDTO model)
         {
            if (ModelState.IsValid)
@@ -56,9 +57,9 @@ namespace MagicVilla_Web.Controllers
             return View(model);
         }
 
-        
         public async Task<IActionResult> UpdateVilla(int villaId)
         {
+            Console.WriteLine($"Received villaId: {villaId}");
             var response = await _villaService.GetAsync<APIResponse>(villaId);
 
             if (response != null && response.IsSuccess)
@@ -66,6 +67,7 @@ namespace MagicVilla_Web.Controllers
                 VillaDTO model = JsonConvert.DeserializeObject<VillaDTO>(Convert.ToString(response.Result));
                 return View(_mapper.Map<VillaUpdateDTO>(model));
             }
+            Console.WriteLine("Villa not found or response unsuccessful");
 
             return NotFound();
         }
