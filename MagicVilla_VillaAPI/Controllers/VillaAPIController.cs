@@ -13,7 +13,7 @@ using System.Net;
 
 namespace MagicVilla_VillaAPI.Controllers
 {
-    [Route("api/VillaAPI")]
+    [Route("api/VillaaNumberAPI")]
     [ApiController]
     public class VillaAPIController : ControllerBase
     {
