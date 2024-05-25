@@ -24,7 +24,7 @@ namespace MagicVilla_VillaAPI.Data
                                    "Situated amidst lush landscapes, " +
                                    "these stately residences serve as a testament to the historical significance and refined taste of royalty. " +
                                    "Here, I'll provide an English description of a royal villa, capturing its essence in approximately 100 words.",
-                        ImageUrl = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmcmtenerife.com%2Fkakie-sushhestvuyut-razlichiya-mezhdu-villoj-i-osobnyakom%2F&psig=AOvVaw2AaMNX-GZ4-4Rpipf5Q8iQ&ust=1705954550626000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOjkwvWl74MDFQAAAAAdAAAAABAD",
+                        ImageUrl = "https://dotnetmastery.com/bluevillaimages/villa1.jpg",
                         Occupancy = 5,
                         Rate = 200,
                         Sqft = 500,

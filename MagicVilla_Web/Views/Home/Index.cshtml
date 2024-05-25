@@ -12,30 +12,32 @@
                 <div class="col-4">
                     <img class="d-block w-100" style="border-radius:20px;" src="@villa.ImageUrl"  alt="First slide">
                 </div>
-            </div>
-            <div class="col-8">
-                <p class="card-title text-warning" style="font-size:xx-large">
-                    @villa.Name
-                </p>
-                <p class="card-text">
-                    @((MarkupString)villa.Details)
-                </p>
-            </div>
-            <div class="col-12">
-                <div class="row pb-3 pt-2">
-                    <a href="" class="btn btn-success form-control btn-block">
-                        Book
-                    </a>
+                <div class="col-8">
+                    <p class="card-title text-warning" style="font-size:xx-large">
+                        @villa.Name
+                    </p>
+                    <p class="card-text">
+                        @((MarkupString)villa.Details)
+                    </p>
                 </div>
-                <div class="col-4">
-                    <span class="">Max Occupancy: @villa.Occupancy adults</span><br />
-                    <span class="pt-1">Villa Size: @villa.Sqft sqft</span><br />
-                </div>
-                <div class="col-4">
-                    USD
-                    <span style="border-bottom:1px solid #ff6a00">
-                        @villa.Rate.ToString("c")
-                    </span>
+                <div class="col-12">
+                    <div class="row pb-3 pt-2">
+                        <div class="col-4">
+                            <a href="" class="btn btn-success form-control btn-block">
+                                Book
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <span class="">Max Occupancy: @villa.Occupancy adults</span><br />
+                            <span class="pt-1">Villa Size: @villa.Sqft sqft</span><br />
+                        </div>
+                        <div class="col-4">
+                            USD
+                            <span style="border-bottom:1px solid #ff6a00">
+                                @villa.Rate.ToString("c")
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
