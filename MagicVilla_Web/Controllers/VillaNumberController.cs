@@ -156,13 +156,13 @@ namespace MagicVilla_Web.Controllers
 
         public async Task<IActionResult> DeleteVillaNumber(int villaId)
         {
-            VillaNumberUpdateVM VillaNumberVM = new();
+            VillaNumberDeleteVM VillaNumberVM = new();
             var response = await _villaNumberService.GetAsync<APIResponse>(villaId);
 
             if (response != null && response.IsSuccess)
             {
                 VillaNumberDTO model = JsonConvert.DeserializeObject<VillaNumberDTO>(Convert.ToString(response.Result));
-                VillaNumberVM.VillaNumber = _mapper.Map<VillaNumberUpdateDTO>(model);
+                VillaNumberVM.VillaNumber = _mapper.Map<VillaNumberDTO>(model);
             }
 
             response = await _villaService.GetAllAsync<APIResponse>();
