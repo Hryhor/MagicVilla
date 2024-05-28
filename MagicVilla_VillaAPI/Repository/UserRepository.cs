@@ -8,10 +8,12 @@ namespace MagicVilla_VillaAPI.Repository
     public class UserRepository: IUserRepository
     {
         private readonly ApplicationDbContext _db;
+        private string secretKey;
 
-        public UserRepository(ApplicationDbContext db)
+        public UserRepository(ApplicationDbContext db, IConfiguration configuration)
         {
             _db = db;
+            secretKey = configuration.GetValue<string>("ApiSettings:Secret");
         }
 
         public bool IsUniqueUser(string username)
@@ -28,7 +30,15 @@ namespace MagicVilla_VillaAPI.Repository
 
         public async Task<LoginResponseDTO> Login(LoginRequestDTO loginRequestDTO)
         {
-            throw new NotImplementedException();
+            var user = _db.Users.FirstOrDefault(u => u.UserName.ToLower() == loginRequestDTO.UserName.ToLower() 
+            && u.Password == loginRequestDTO.Password);
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            return null;
         }
 
         public async Task<LocalUser> Register(RegistrationRequestDTO registrationRequestDTO)
