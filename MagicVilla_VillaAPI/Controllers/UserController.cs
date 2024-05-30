@@ -14,10 +14,10 @@ namespace MagicVilla_VillaAPI.Controllers
         private readonly IUserRepository _userRepo;
         protected APIResponse _response;
 
-        public UserController(IUserRepository userRepo, APIResponse response)
+        public UserController(IUserRepository userRepo)
         {
             _userRepo = userRepo;
-            _response = response;
+            this._response = new();
         }
 
         [HttpPost("login")]
