@@ -7,7 +7,7 @@ using System.Net;
 
 namespace MagicVilla_VillaAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/UsersAuth")]
     [ApiController]
     public class UserController : ControllerBase
     {
