@@ -71,7 +71,7 @@ namespace MagicVilla_Web.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Loggout()
+        public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
             HttpContext.Session.SetString(SD.SessionToken, "");
