@@ -13,7 +13,7 @@ namespace MagicVilla_Web.Services
         public AuthService(IHttpClientFactory clientFactory, IConfiguration configuration) : base(clientFactory)
         {
             _clientFactory = clientFactory;
-            villaUrl = configuration.GetValue<string>("ServiceUsrls:VillaAPI");
+            villaUrl = configuration.GetValue<string>("ServiceUrls:VillaAPI");
         }
 
         public Task<T> LoginAsync<T>(LoginRequestDTO obj)

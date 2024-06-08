@@ -2,8 +2,10 @@
 using MagicVilla_Web.Models;
 using MagicVilla_Web.Models.Dto;
 using MagicVilla_Web.Services.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Data;
 using System.Diagnostics;
 
 namespace MagicVilla_Web.Controllers
@@ -19,6 +21,8 @@ namespace MagicVilla_Web.Controllers
             _mapper = mapper;
         }
 
+
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             List<VillaDTO> list = new();
