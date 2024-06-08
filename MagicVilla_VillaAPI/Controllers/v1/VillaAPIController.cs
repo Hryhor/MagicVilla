@@ -33,6 +33,7 @@ namespace MagicVilla_VillaAPI.Controllers.v1
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ResponseCache(Duration = 30)]
         public async Task<ActionResult<APIResponse>> GetVillas()
         {
             try
