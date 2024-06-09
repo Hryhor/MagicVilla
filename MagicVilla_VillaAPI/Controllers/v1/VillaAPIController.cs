@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 using System.Net;
 
 namespace MagicVilla_VillaAPI.Controllers.v1
@@ -34,12 +35,22 @@ namespace MagicVilla_VillaAPI.Controllers.v1
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ResponseCache(CacheProfileName = "Default30")]
-        public async Task<ActionResult<APIResponse>> GetVillas()
+        public async Task<ActionResult<APIResponse>> GetVillas([FromQuery]int? occupancy)
         {
             try
             {
                 //_logger.LogInformation("Getting all villas");
-                IEnumerable<Villa> villaList = await _dbVilla.GetAllAsync();
+                IEnumerable<Villa> villaList;
+
+                if (occupancy > 0)
+                {
+                    villaList = await _dbVilla.GetAllAsync(u => u.Occupancy == occupancy);
+                }
+                else
+                {
+                    villaList = await _dbVilla.GetAllAsync();
+                }
+
                 _response.Result = _mapper.Map<IEnumerable<VillaDTO>>(villaList);
                 _response.StatusCode = HttpStatusCode.OK;
             }
