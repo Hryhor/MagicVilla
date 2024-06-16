@@ -2,8 +2,10 @@ using MagicVilla_Web;
 using MagicVilla_Web.Services;
 using MagicVilla_Web.Services.IServices;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 //builder.Services.AddHttpContextAccessor();
